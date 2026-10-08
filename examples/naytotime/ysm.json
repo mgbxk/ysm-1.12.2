@@ -1,0 +1,193 @@
+{
+	"spec": 2,
+	"metadata": {
+		"name": "§l奶油桃NaytoTime",
+		"version": "V1.0.0",
+		"tips": "§b奶油桃NaytoTime§r\n这里是行星图书馆的奶油桃，请问需要来点什么？\n\n本模型为开源模型，可以在标注原作者的情况下进行改模，重配布，二次创作\n基于该模型制作的衍生产物将不受任何限制。\n\n模型版本：V1.0.0\n*制作版本：YSM：2.5.2\n§6§l**映素作坊_行星组**",
+		"license": {
+			"type": "CC-BY 4.0",
+			"desc:": ""
+		},
+		"authors": [
+			{
+				"name": "奶油桃",
+				"role": "模型，动画，效果",
+				"avatar": "avatar/NYT.png",
+				"contact": {
+					"Bilibili": "https://space.bilibili.com/74167922"
+				},
+				"comment": "这里是行星图书馆的奶油桃，请问有什么需求"
+			},
+			{
+				"name": "vV_CL",
+				"avatar": "avatar/VV.jpg",
+				"role": "适配"
+			},
+			{
+				"name": "龙某兄",
+				"avatar": "avatar/lmx.jpg",
+				"role": "动画制作",
+				"contact": {
+					"Bilibili": "https://space.bilibili.com/316301352"
+				}
+			},
+			{
+				"name": "鸠",
+				"avatar": "avatar/JX.jpg",
+				"role": "宣图",
+				"contact": {
+					"Bilibili": "https://space.bilibili.com/3546970064947223"
+				}
+			},
+			{
+				"name": "哥斯拉",
+				"role": "模型支持",
+				"avatar": "avatar/gsl.png",
+				"contact": {
+					"Afdian": "https://afdian.net/a/6TGESILA",
+					"Bilibili": "https://space.bilibili.com/17798027"
+				},
+				"comment": "一个MC模型/YSM作者，想法很多，时间很少"
+			}
+		],
+		"link": {
+			"home": "https://space.bilibili.com/17798027",
+			"donate": "https://afdian.com/a/6TGESILA"
+		}
+	},
+	"files": {
+		"player": {
+			"model": {
+				"main": "models/main.json",
+				"arm": "models/arm.json"
+			},
+			"animation": {
+				"main": "animations/main.animation.json",
+				"extra": "animations/extra.animation.json",
+				"tac": "animations/tac.animation.json",
+				"slashblade": "animations/slashblade.animation.json"
+			},
+			"texture": [
+				{
+					"uv": "textures/texture.png"
+				}
+			]
+		}
+	},
+	"properties": {
+		"free": false,
+		"all_cutout": false,
+		"height_scale": 0.7,
+		"width_scale": 0.7,
+		"default_texture": "default",
+		"render_layers_first": false,
+		"disable_preview_rotation": true,
+		"preview_animation": "gui",
+		"gui_no_lighting": true,
+		"gui_foreground": "textures/foreground.png",
+		"gui_background": "textures/background.png",
+		"extra_animation": {
+			"empty": "#模型配置",
+			"#默认动画组": "默认动画组",
+			"#桃的额外动画": "桃的额外动画"
+		},
+		"extra_animation_classify": [
+			{
+				"id": "默认动画组",
+				"extra_animation": {
+					"extra0": "诹访大舞",
+					"extra1": "打招呼",
+					"extra2": "鼓掌",
+					"extra3": "Get Down",
+					"extra4": "乱舞",
+					"extra5": "卖萌",
+					"extra6": "御笔摇",
+					"extra7": "舞蹈"
+				}
+			},
+			{
+				"id": "桃的额外动画",
+				"extra_animation": {
+					"#return": "返回按钮",
+					"AvgnDance": "AvgnDance",
+					"站立打盹": "站立打盹",
+					"站立打盹2": "站立打盹2",
+					"鸭子坐": "鸭子坐",
+					"抻懒腰": "抻懒腰",
+					"坐着发呆": "坐着发呆"
+				}
+			}
+		],
+		"extra_animation_buttons": [
+			{
+				"id": "模型配置",
+				"name": "点击齿轮配置模型",
+				"config_forms": [
+					{
+						"type": "range",
+						"title": "角色缩放",
+						"description": "缩放玩家整体尺寸",
+						"value": "v.roaming.charactersize",
+						"step": 0.05,
+						"min": -0.75,
+						"max": 2
+					},
+					{
+						"type": "range",
+						"title": "嘴形切换",
+						"description": "用来切换玩家的嘴形，每个值代表一个嘴型",
+						"value": "v.roaming.mouthexpre",
+						"step": 1,
+						"min": 0,
+						"max": 11
+					},
+					{
+						"type": "range",
+						"title": "眼镜切换",
+						"description": "替换眼镜样式",
+						"value": "v.roaming.glasschange",
+						"step": 1,
+						"min": 0,
+						"max": 2
+					},
+					{
+						"type": "checkbox",
+						"title": "袜子穿脱",
+						"description": "是否穿脱过膝袜",
+						"value": "v.roaming.sockschange"
+					},
+					{
+						"type": "checkbox",
+						"title": "帽子穿脱",
+						"description": "是否穿脱帽子",
+						"value": "v.roaming.hatchange"
+					},
+					{
+						"type": "checkbox",
+						"title": "外套穿脱",
+						"description": "是否穿脱外套",
+						"value": "v.roaming.coatchange"
+					},
+					{
+						"type": "checkbox",
+						"title": "取景框显示",
+						"description": "是否显示取景框水印",
+						"value": "v.roaming.viewfinderchange"
+					},
+					{
+						"type": "checkbox",
+						"title": "围巾穿脱",
+						"description": "是否穿脱围巾",
+						"value": "v.roaming.scarfchange"
+					},
+					{
+						"type": "checkbox",
+						"title": "鞘翅装备显示",
+						"description": "设置原版鞘翅的显示和关闭",
+						"value": "v.roaming.elytronchange"
+					}
+				]
+			}
+		]
+	}
+}

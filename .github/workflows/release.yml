@@ -1,0 +1,35 @@
+name: Create draft release
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Release tag, for example v1.1.9-modern.9
+        required: true
+        default: v1.1.9-modern.9
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: '25'
+      - uses: gradle/actions/setup-gradle@v5
+      - run: chmod +x ./gradlew
+      - run: ./gradlew --no-daemon build
+      - uses: ncipollo/release-action@v1.20.0
+        with:
+          tag: ${{ inputs.tag }}
+          commit: ${{ github.sha }}
+          name: YSM 1.12.2 ${{ inputs.tag }}
+          draft: true
+          allowUpdates: false
+          artifacts: build/libs/*.jar
+          bodyFile: docs/RELEASE_NOTES_MODERN9.md

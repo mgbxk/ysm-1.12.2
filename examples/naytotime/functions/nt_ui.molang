@@ -1,0 +1,45 @@
+//[配置指南]
+//-fn.nt_ui(a,b)
+//a:类型 1(血量) 2(饥饿) 3(额外ui) 4(偏移) 5(抖动)无则直接输出v.roaming.ui
+//b:值(取决于a的类型)[a=1/2 血量值][a=3 标识类型 无0心1加2危3][a=4 ui偏移 0-x 1-y]
+
+t.ui_health=query.health>=(args[1]*2);
+t.ui_food=(ysm.food_level>=(args[1]*2));
+
+args[0]==1?{
+    return t.ui_health; 
+}:{};
+
+args[0]==2?{
+    return t.ui_food;
+}:{};
+
+args[0]==3?{
+    args[1]==0?{
+        return 0; 
+    }:{};
+    args[1]==1?{
+        return (q.health == q.max_health);
+    }:{};
+    args[1]==2?{
+        return (q.health > 20 && q.health < q.max_health);
+    }:{};
+    args[1]==3?{
+        return (query.health <= 8);
+    }:{};
+}:{};
+
+args[0]==4?{
+    args[1]==0?{
+        return (v.roaming.ui_is_switch?1:-1)*((v.roaming.ui_is_change?30:0)-v.roaming.ui_loc_x);
+    }:{};
+    args[1]==1?{
+        return (v.roaming.ui_is_change?-30:0)+(v.roaming.ui_loc_y);
+    }:{};
+}:{};
+
+args[0]==5?{
+    return (query.health<=8)?math.random(-0.2, 0.2):0;
+}:{};
+
+return v.roaming.ui;

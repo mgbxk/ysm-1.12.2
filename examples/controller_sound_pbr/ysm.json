@@ -1,0 +1,53 @@
+{
+  "spec": 2,
+  "metadata": {
+    "name": "控制器·音效·PBR 测试",
+    "tips": "走动时切换控制器并触发提示音。蓝色皮肤携带 PBR 贴图。",
+    "authors": [
+      {
+        "name": "哥斯拉"
+      },
+      {
+        "name": "端木"
+      },
+      {
+        "name": "甜粽子"
+      },
+      {
+        "name": "星屑海螺"
+      }
+    ],
+    "license": {
+      "type": "CC0",
+      "desc": "模型和贴图来自 LegacyYSM 内置默认模型。"
+    }
+  },
+  "properties": {
+    "free": true,
+    "default_texture": "blue",
+    "height_scale": 0.7,
+    "width_scale": 0.7
+  },
+  "files": {
+    "player": {
+      "model": {
+        "main": "models/main.json",
+        "arm": "models/arm.json"
+      },
+      "texture": [
+        "textures/default.png",
+        {
+          "uv": "textures/blue.png",
+          "normal": "textures/blue_n.png",
+          "specular": "textures/blue_s.png"
+        }
+      ],
+      "animation": {
+        "demo": "animations/demo.animation.json"
+      },
+      "animation_controllers": [
+        "controllers/player.json"
+      ]
+    }
+  }
+}

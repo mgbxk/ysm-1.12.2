@@ -1,0 +1,62 @@
+//[配置指南]
+//-fn.nt_hair(a,b,c,d,e)
+//a:轴向 0-x 1-y
+//b:朝向 -1-left 0-mid 1-right
+//c:前后 0-后 1-前
+//d:晃动幅度
+//e:抗穿模幅度
+
+//固定晃动
+t.hair_cos=5*math.cos(6*query.time_stamp);
+//规格化之后的cos(循环3s,值±1)
+t.cos=math.sin(6*query.time_stamp);
+//头发防穿
+t.hair_declip=ysm.second_order('抬头头发防穿模', (ysm.head_pitch>-75?ysm.head_pitch:-75), 2, 0.6, 0);
+
+//头发朝向判断
+t.para_hairside=args[1];
+//left
+args[1]==-1?{t.para_hairside=-1;}:{};
+//right
+args[1]==1?{t.para_hairside=1;}:{};
+//mid
+args[1]==0?{t.para_hairside=0.5;}:{};
+//leftside
+args[1]==-2?{t.para_hairside=-1.5;}:{};
+//rightside
+args[1]==2?{t.para_hairside=1.5;}:{};
+
+t.para_cos=args[3];
+t.para_declip=args[4];
+
+//头发位置判断
+//后发
+args[2]==0?{
+    args[0]==0?{
+        //x轴长发物理
+        t.hair_yaw_x=ysm.second_order('头发垂直', math.clamp(-3*q.vertical_speed,-10,120), 1, 0.4, 0)+ysm.second_order('头发水平', ysm.input_vertical*math.clamp(5*ysm.ground_speed2,0,40), 2, 0.4, 0);
+        
+        return -t.para_declip*t.hair_declip-2*t.para_cos*t.hair_yaw_x-0.1*t.para_cos*t.hair_cos;
+    }:{};
+    args[0]==1?{
+        //z轴长发物理
+        t.hair_yaw_z=ysm.second_order('头发角速度', math.clamp(-0.02*q.yaw_speed,-60,60), 1, 0.4, 0);
+        
+        return t.para_hairside*t.para_cos*t.hair_cos-t.hair_yaw_z;
+    }:{};
+}:{};
+//前发
+args[2]==1?{
+    args[0]==0?{
+        //x轴短发物理
+        t.lit_hair_yaw_x=ysm.second_order('前发垂直', math.clamp(-3*q.vertical_speed,-5,10), 1, 0.4, 0)+ysm.second_order('前发水平', ysm.input_vertical*math.clamp(10*ysm.ground_speed2 ,0,10), 1, 0.4, 0);
+        
+        return -t.para_declip*t.hair_declip-(1-t.para_declip)*t.lit_hair_yaw_x-0.1*t.para_cos*t.hair_cos;
+    }:{};
+    args[0]==1?{
+        //z轴短发物理
+        t.lit_hair_yaw_z=ysm.second_order('头发角速度', math.clamp(-0.02*q.yaw_speed,-5,10), 1, 0.4, 0);
+
+        return 0.5*t.para_hairside*t.para_cos*t.hair_cos+t.lit_hair_yaw_z;
+    }:{};
+}

@@ -1,0 +1,9 @@
+NaytoTime（奶油桃）公开 YSM 模型，模型版本 V1.0.0，作者标注制作版本 YSM 2.5.2。
+模型作者：NaytoTime（奶油桃）。动画作者：龙某兄、奶油桃。ysm.json 内其他作者署名完整保留。
+原始仓库：https://github.com/NaytoTime/NaytoTime-YSM
+固定提交：a811450bc0a80180cc327f22e3e3d5b8175ad4b8
+许可证：CC BY 4.0，https://creativecommons.org/licenses/by/4.0/
+原始模型的 JSON、贴图、动画和函数文件未修改；新增本说明并随包附带许可证及原 README。
+本包未包含原仓库的加密 .ysm 文件和 Blockbench 工程。
+modern.4 已增加 fn.nt_hair / ysm.second_order、九项模型配置及分类轮盘支持，实测范围与限制见随包测试报告。
+游戏截图里的奶油桃模型按上述许可和作者署名提供。

@@ -1,0 +1,16 @@
+{
+  "name": "Default",
+  "tips": "默认模型（Default Model）",
+  "authors": [
+    "哥斯拉",
+    "端木",
+    "甜粽子",
+    "星屑海螺"
+  ],
+  "license": "CC 0",
+  "free": true,
+  "gui_background": "background.png",
+  "gui_foreground": "foreground.png",
+  "preview_animation": "gui",
+  "disable_preview_rotation": true
+}

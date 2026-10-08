@@ -1,0 +1,41 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "player.main": {
+      "initial_state": "idle",
+      "states": {
+        "idle": {
+          "animations": [
+            "idle"
+          ],
+          "blend_transition": 0.2,
+          "transitions": [
+            {
+              "move": "ctrl.walk || ctrl.run || ctrl.sneak"
+            }
+          ]
+        },
+        "move": {
+          "animations": [
+            "walk",
+            {
+              "demo.pulse": 0.25
+            }
+          ],
+          "blend_transition": 0.2,
+          "sound_effects": [
+            {
+              "effect": "minecraft:block.note.pling",
+              "volume": 0.25
+            }
+          ],
+          "transitions": [
+            {
+              "idle": "!(ctrl.walk || ctrl.run || ctrl.sneak)"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
