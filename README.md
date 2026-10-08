@@ -1,4 +1,4 @@
-# YSM 1.12.2 — 1.0 独立修改
+# YSM 1.12.2 — 1.0 
 基于旧开源 LegacyYSM v1.1.9 的 Minecraft Java 1.12.2 / Forge 移植修改版。支持部分新版公开模型数据、纯客户端本地模式、悬浮模型库和动作轮盘。
 
 。本项目独立维护；上游原作者、版权和资源许可证完整保留。
@@ -31,8 +31,6 @@ B:modSupport=false
 ## 支持与限制
 
 支持公开 `ysm.json` spec 1/2 的未加密文件夹和 ZIP、已实现的动画控制器子集、`blend_transition` 曲线对象、部分 Molang、模型外观配置与分类轮盘。提供动画音效及 OptiFine / 支持实体 LabPBR 的光影接入；默认游戏渲染不具有完整 PBR 效果。
-
-模型库和轮盘悬浮在游戏画面上，面板外继续显示游戏。modern9 修复预览朝向、裁剪、深度遮挡、共享骨骼姿态、变身与动作并行时的缩放覆盖，以及重复播放同名动作。
 
 新版加密 `.ysm`、粒子、未实现的新版模组联动与部分脚本/控制器功能仍不支持。
 主要代码采用 [BSD-3-Clause](LICENSE)，嵌入代码和美术资源分别沿用其许可。酒狐及图标为 **CC BY-NC-SA 4.0**；默认模型为 CC0；奶油桃示例为 CC BY 4.0。请保留 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)、licenses/ 和模型作者信息。
