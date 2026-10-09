@@ -1,34 +1,39 @@
-# YSM 1.12.2 — 1.0 
-基于旧开源 LegacyYSM v1.1.9 的 Minecraft Java 1.12.2 / Forge 移植修改版。支持部分新版公开模型数据、纯客户端本地模式、悬浮模型库和动作轮盘。
+# YSM 1.12.2
 
-。本项目独立维护；上游原作者、版权和资源许可证完整保留。
+Minecraft Java 1.12.2 / Forge 的 YSM 独立修改版。
 
-下载本体后必须同时安装前置 **[MixinBooter](https://www.curseforge.com/minecraft/mc-mods/mixin-booter)**。详见 **[文字安装说明](docs/INSTALLATION.md)**。
+## 最新发布：1.1
 
-[下载 Mod 本体：ysm-1.12.2-1.0.jar](https://github.com/mgbxk/ysm-1.12.2/releases/download/v1.0/ysm-1.12.2-1.0.jar) · [发布页面与安装包](https://github.com/mgbxk/ysm-1.12.2/releases/tag/v1.0)
+**更新内容：支持新版 YSM 格式。**
+
+[下载 Mod 本体：ysm-1.12.2-1.1.jar](https://github.com/mgbxk/ysm-1.12.2/releases/download/v1.1/ysm-1.12.2-1.1.jar) · [1.1 发布页面与安装包](https://github.com/mgbxk/ysm-1.12.2/releases/tag/v1.1) · [历史版本 1.0](https://github.com/mgbxk/ysm-1.12.2/releases/tag/v1.0)
+
+本次发布使用提供的 `ysm-1.12.2-modern10-v3.jar`，仅将下载文件名改为 `ysm-1.12.2-1.1.jar`；内部版本为 `1.1.9-modern.10`。
 
 ## 安装
 
-- Minecraft Java **1.12.2**；Forge 实测 **14.23.5.2860**；游戏运行使用 **Java 8**。
-- 必需前置：[MixinBooter](https://modrinth.com/mod/mixinbooter)。本版本实测 **10.6**；更高前置版本未纳入 modern9 实机验证。
-- 将 `ysm-1.12.2-1.0.jar` 与必需前置 **MixinBooter** 放入当前实例的 `mods/`，各只保留一份。
-- **Alt+Y** 打开模型库；**Z** 打开动作轮盘，可在游戏“控制”中修改。
-- 自定义模型目录：当前游戏实例的 `config/yes_steve_model/custom/`。放入整个模型文件夹或支持的 ZIP 后重新加载模型，或按 F3+T。
-
-连接未安装 YSM 的服务器时自动启用本地模式，只有自己看见自己的模型。单人游戏及装有同版本 YSM 的服务端保留同步模式。服务端联机详情见 [CLIENT_MODE.md](CLIENT_MODE.md)。
-
-
-### 安装了 VanillaFix 才需要修改配置
-
-**如果你的整合包没有 VanillaFix，可以跳过此项。** 已安装时，打开当前实例的 `config/vanillafix.cfg`，找到 `fixes` 配置区，将其中的 `B:modSupport` 设置为：
+1. 使用 Minecraft Java **1.12.2 / Forge**，游戏运行使用 **Java 8**。
+2. 完全退出游戏，移出旧 YSM，把 `ysm-1.12.2-1.1.jar` 放入当前实例的 `mods/`，只保留一个 YSM。
+3. **必须安装前置 [MixinBooter](https://www.curseforge.com/minecraft/mc-mods/mixin-booter)**，选择支持 Minecraft 1.12.2 / Forge 的版本，一起放进 `mods/`。
+4. 只有安装了 **VanillaFix** 时，打开 `config/vanillafix.cfg`，将 `fixes` 配置区中的设置改为：
 
 ```cfg
 B:modSupport=false
 ```
 
-保存后重新启动游戏。这一步关闭 VanillaFix 的模组兼容支持；**MixinBooter 是必需前置，无论是否安装 VanillaFix 都需要安装。**
+没有 VanillaFix 就跳过配置修改；MixinBooter 无论如何都需要安装。详见 [文字安装说明](docs/INSTALLATION.md) 与 [1.1 更新说明](docs/RELEASE_NOTES_1.1.md)。
 
-## 支持与限制
+## 基本操作
+
+- **Alt+Y**：模型库。
+- **Z**：动作轮盘。
+- 自定义模型目录：`config/yes_steve_model/custom/`。
+
+## 仓库源码与验证范围
+
+新版对应源码未随 1.1 JAR 提供。本仓库源码和下方功能、构建、测试报告仍对应此前 **1.0** 交付版本；本次没有重新编译或运行游戏测试。GitHub 自动生成的 Source code 附件来自现有仓库源码。
+
+## 此前 1.0 源码的支持与限制
 
 支持公开 `ysm.json` spec 1/2 的未加密文件夹和 ZIP、已实现的动画控制器子集、`blend_transition` 曲线对象、部分 Molang、模型外观配置与分类轮盘。提供动画音效及 OptiFine / 支持实体 LabPBR 的光影接入；默认游戏渲染不具有完整 PBR 效果。
 
