@@ -8,7 +8,6 @@ Minecraft Java 1.12.2 / Forge 的 YSM 独立修改版。
 
 [下载 Mod 本体：ysm-1.12.2-1.1.jar](https://github.com/mgbxk/ysm-1.12.2/releases/download/v1.1/ysm-1.12.2-1.1.jar) · [1.1 发布页面与安装包](https://github.com/mgbxk/ysm-1.12.2/releases/tag/v1.1) · [历史版本 1.0](https://github.com/mgbxk/ysm-1.12.2/releases/tag/v1.0)
 
-本次发布使用提供的 `ysm-1.12.2-modern10-v3.jar`，仅将下载文件名改为 `ysm-1.12.2-1.1.jar`；内部版本为 `1.1.9-modern.10`。
 
 ## 安装
 
