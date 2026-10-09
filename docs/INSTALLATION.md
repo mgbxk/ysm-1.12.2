@@ -36,3 +36,7 @@ B:modSupport=false
 本次更新内容由发布者提供；未重新编译或运行游戏测试。新版对应源码未随 JAR 提供，仓库源码与原有测试报告仍对应此前的 1.0 交付版本，GitHub 自动生成的 Source code 附件也来自该仓库源码。
 
 安装说明使用文字，未附带聊天截图。原作者、主体许可证及第三方组件声明予以保留。
+
+## MCG 整合包
+
+使用 MCG（MinecraftGensoukyo）时，请按 [MCG 安装教程](MCG_INSTALLATION.md) 先替换提供的 VanillaFix 配置，再把 MixinBooter 和 YSM 本体放入该实例的 mods 文件夹。

@@ -23,6 +23,10 @@ B:modSupport=false
 
 没有 VanillaFix 就跳过配置修改；MixinBooter 无论如何都需要安装。详见 [文字安装说明](docs/INSTALLATION.md) 与 [1.1 更新说明](docs/RELEASE_NOTES_1.1.md)。
 
+## MCG 整合包安装
+
+[完整教程与配置下载](docs/MCG_INSTALLATION.md)：先用提供的 anillafix.cfg 替换 .minecraft/versions/MinecraftGensoukyo/config/vanillafix.cfg，再将 **MixinBooter 前置和 YSM 本体**放进同一实例的 .minecraft/versions/MinecraftGensoukyo/mods/。
+
 ## 基本操作
 
 - **Alt+Y**：模型库。
