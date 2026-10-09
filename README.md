@@ -33,9 +33,7 @@ B:modSupport=false
 - 自定义模型目录：`config/yes_steve_model/custom/`。
 
 ## 仓库源码与验证范围
-
-新版对应源码未随 1.1 JAR 提供。本仓库源码和下方功能、构建、测试报告仍对应此前 **1.0** 交付版本；本次没有重新编译或运行游戏测试。GitHub 自动生成的 Source code 附件来自现有仓库源码。
-
+源码暂时为1.0版本。
 ## 此前 1.0 源码的支持与限制
 
 支持公开 `ysm.json` spec 1/2 的未加密文件夹和 ZIP、已实现的动画控制器子集、`blend_transition` 曲线对象、部分 Molang、模型外观配置与分类轮盘。提供动画音效及 OptiFine / 支持实体 LabPBR 的光影接入；默认游戏渲染不具有完整 PBR 效果。
